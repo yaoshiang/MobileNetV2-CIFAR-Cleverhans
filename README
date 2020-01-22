@@ -1,1 +1,8 @@
+Applying Cleverhans to a version of MobileNetV2.
 
+We specifically choose a modern architecture to analyze. A CNN built solely on convolutions and pooling are by now far out of date. We wanted a CNN with batchnorm, bottlenecks, and residual blocks.
+
+But training on ImageNet is expensive and slow. So we decided build for CIFAR10. This required us to shorten MobileNetV2 to prevent overstriding down of the feature maps down to 1x1 degenerate maps.
+
+Adversarial Examples Improve Image Recognition https://arxiv.org/abs/1911.09665
+How Does Batch Normalization Help Optimization? https://arxiv.org/pdf/1805.11604.pdf
