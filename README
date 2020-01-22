@@ -10,5 +10,22 @@ But training on ImageNet is expensive and slow. So we decided build for CIFAR10.
 
 This required us to shorten MobileNetV2 to prevent overstriding down of the feature maps down to 1x1 degenerate maps.
 
-Adversarial Examples Improve Image Recognition https://arxiv.org/abs/1911.09665
-How Does Batch Normalization Help Optimization? https://arxiv.org/pdf/1805.11604.pdf
+Batch Renormalization: Towards Reducing Minibatch Dependence in Batch-Normalized Models: 
+http://papers.nips.cc/paper/6790-batch-renormalization-towards-reducing-minibatch-depend
+This paper by Ioffe and Szegedy (who also authored GoogLeNet and launched the field of Adversarial) intorduces Batch Norm.
+The initial hypothesis is that it reduces Internal Covariate Shift (ICS). 
+
+Adversarial Examples Improve Image Recognition: 
+https://arxiv.org/abs/1911.09665: 
+This paper is groundbreaking for being the first example of adversarial retraining increasing clean accuracy.
+It's theory is that adversarial examples have a different distribution and need their own Batch Norm.
+
+On Detecting Adversarial Perturbations: 
+https://arxiv.org/abs/1702.04267
+This paper successfully detects adversarial examples by detecting changes in the distribution at specific layers.
+However, adversarial attacks with the detector's loss function factored in are successful in tricking the detector. 
+We would like to build on this research with related ideas on detection. 
+
+How Does Batch Normalization Help Optimization? 
+https://arxiv.org/pdf/1805.11604.pdf
+This paper suggests that Batch Norm's success may have less to do with the original theory of Internal Covariate Shift.
